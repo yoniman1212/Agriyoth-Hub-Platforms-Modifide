@@ -1,0 +1,334 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="AgriYoth_hub.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> | AgriYoth</title>
+    <link href="Content/fonts/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="Content/vendor/node_modules/css/aos.css" rel="stylesheet" />
+    <link href="Content/fonts/iconsmind/iconsmind.css" rel="stylesheet" />
+    <link href="Content/img/favicon.ico" rel="icon" />
+    <link rel="preconnect" href="../../../../fonts.googleapis.com/index.html">
+    <link rel="preconnect" href="../../../../fonts.gstatic.com/index.html" crossorigin="">
+    <link href="../../../../fonts.googleapis.com/css2a726.css?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Source+Serif+Pro:ital@0;1&amp;display=swap" rel="stylesheet">
+
+
+    <link href="assets/css/theme.min.css" rel="stylesheet" />
+
+    <asp:PlaceHolder runat="server">
+
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <!--Preloader Spinner-->
+
+        <div class="spinner-loader bg-primary text-white">
+            <div class="spinner-grow" role="status">
+            </div>
+            <span class="small d-block ms-2">Loading...</span>
+        </div>
+        <!--begin:Header-->
+        <header class="header-transparent sticky-fixed">
+
+            <!--begin:navbar-->
+            <nav class="navbar navbar-expand-lg fixed-top navbar-light navbar-link-white">
+                <!--Navbar-fixed-background-->
+                <div class="navbar-fixed-bg position-absolute"></div>
+                <div class="container position-relative z-1">
+                    <!--begin:logo-->
+                    <a class="navbar-brand" href="index.html">
+                        <img src="Content/img/logo/logo.svg" alt="" class="img-fluid navbar-brand-sticky">
+                        <img src="Content/img/logo/logo-white.svg" alt="" class="img-fluid navbar-brand-transparent">
+                    </a>
+                    <!--end:logo-->
+                    <!--begin:navbar-no-collapse-items-->
+                    <div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
+                        <!--Navbar toggler button-->
+                        <button class="navbar-toggler order-last" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#mainNavbarTheme" aria-controls="mainNavbarTheme" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon">
+                                <i></i>
+
+                            </span>
+                        </button>
+                        <!--Button-->
+
+                        <div class="nav-item me-3 ms-lg-3 ms-xl-5 me-lg-0">
+                            <a href="/Login" class="btn btn-success btn-sm">Login</a>
+                        </div>
+                        <div class="nav-item me-3 ms-lg-3 ms-xl-5 me-lg-0">
+                            <a href="/Create-account" class="btn btn-success btn-sm">Signup</a>
+                        </div>
+                    </div>
+                    <!--end:navbar-no-collapse-items-->
+
+                    <!--begin:navbar-collapse-->
+                    <div class="collapse navbar-collapse" id="mainNavbarTheme">
+
+                        <!--begin:Navbar items-->
+                        <ul class="navbar-nav ms-auto">
+
+                            <!--begin:landings-->
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/" role="button">Home
+                                </a>
+
+                            </li>
+                            <!--end:landings-->
+
+                            <!--begin:portfolio-->
+                            <li class="nav-item">
+                                <a class="nav-link" href="/About" role="button">About
+                                </a>
+
+                            </li>
+                            <!--end:portfolio-->
+
+                            <!--begin:blog-->
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Service" role="button">Service
+                                </a>
+                            </li>
+                            <!--end:blog-->
+
+                            <!--begin:pages-->
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Blog" role="button">Blog
+                                </a>
+                            </li>
+                            <!--end:pages-->
+
+                            <!--begin:components-->
+                            <li class="nav-item position-lg-static">
+                                <a class="nav-link " href="/Feature" role="button">Features
+                                </a>
+
+                            </li>
+                            <!--end:components-->
+
+                            <!--begin:features-->
+                            <li class="nav-item  position-lg-static">
+                                <a class="nav-link" href="/Help" role="button">Help
+                                </a>
+
+                            </li>
+                            <!--end:features-->
+
+                            <!--begin:demos-->
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/Faq" role="button">Faq
+                                </a>
+
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle " href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-auto-close="outside">Pages
+                                </a>
+                                <div class="dropdown-menu">
+
+                                    <a class="dropdown-item " data-bs-toggle="dropdown" href="#">Contact Us</a>
+                                    <a class="dropdown-item " data-bs-toggle="dropdown" href="#">Privacy Policy</a>
+
+                                </div>
+
+                                <!--end:Pages-->
+                        </ul>
+                        <!--end:Navbar items-->
+
+                    </div>
+                    <!--end:navbar-collapse-->
+                </div>
+
+            </nav>
+            <!--end:navbar-->
+        </header>
+        <!--end:header-->
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+       
+        <!--begin:Footer-->
+        <footer id="footer" class="bg-dark footer position-relative" data-bs-theme="dark">
+            <div class="container pt-9 pt-lg-11">
+                <div class="row">
+                    <div class="col-md-12 col-lg-4 mb-5 h-100 me-auto">
+                        <!--Title-->
+                        <h2 class="display-6 text-white mb-0 position-relative">Work with us
+                        </h2>
+                        <div class="pt-3">
+                            <a class="link-underline link-light fs-5" href="https://uigator.com/cdn-cgi/l/email-protection#0568646c6945616a64686c6b2b666a68"><span class="__cf_email__" data-cfemail="cfa2aea6a38faba0a2aea6a1e1aca0a2">[email&#160;protected]</span></a>
+                        </div>
+                        <!--:Dark Mode:-->
+                        <div class="d-inline-flex width-13x align-items-center dropup mt-6">
+                            <button class="btn border text-body py-2 px-2 d-flex align-items-center"
+                                id="assan-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown"
+                                data-bs-display="static">
+                                <span class="theme-icon-active d-flex align-items-center">
+                                    <i class="bx align-middle"></i>
+                                </span>
+                            </button>
+                            <!--:Dark Mode Options:-->
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="assan-theme" style="--bs-dropdown-min-width: 9rem;">
+                                <li class="mb-1">
+                                    <button type="button" class="dropdown-item d-flex align-items-center active"
+                                        data-bs-theme-value="light">
+                                        <span class="theme-icon d-flex align-items-center">
+                                            <i class="bx bx-sun align-middle me-2"></i>
+                                        </span>
+                                        Light
+                                    </button>
+                                </li>
+                                <li class="mb-1">
+                                    <button type="button" class="dropdown-item d-flex align-items-center"
+                                        data-bs-theme-value="dark">
+                                        <span class="theme-icon d-flex align-items-center">
+                                            <i class="bx bx-moon align-middle me-2"></i>
+                                        </span>
+                                        Dark
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-flex align-items-center"
+                                        data-bs-theme-value="auto">
+                                        <span class="theme-icon d-flex align-items-center">
+                                            <i class="bx bx-color-fill align-middle me-2"></i>
+                                        </span>
+                                        Auto
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-lg-2 mb-5 mb-md-0 ms-auto h-100">
+                        <!--Title-->
+                        <h6 class="small mb-3 mb-lg-4 text-white-50">Learn</h6>
+                        <!--Nav-->
+                        <ul class="nav flex-column mb-0">
+                            <li class="nav-item"><a class="nav-link" href="#!">Design</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Digital</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Development</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Branding</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Graphics</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Process</a></li>
+                        </ul>
+                    </div>
+                    <!--/.Col-->
+                    <div class="col-sm-4 col-lg-2 mb-5 h-100">
+                        <!--Title-->
+                        <h6 class="small mb-3 mb-lg-4 text-white-50">Resources</h6>
+                        <!--Nav-->
+                        <ul class="nav flex-column mb-0">
+                            <li class="nav-item"><a class="nav-link" href="#!">Elements</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Pricing</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Features</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Blog</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Credits</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Updates</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Help center</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Events</a></li>
+                        </ul>
+                    </div>
+                    <!--/.Col-->
+                    <div class="col-sm-4 col-lg-3 col-xl-2 mb-5 mb-sm-0 h-100">
+                        <!--Title-->
+                        <h6 class="small mb-3 mb-lg-4 text-white-50">Company</h6>
+                        <!--Nav-->
+                        <ul class="nav flex-column mb-0">
+                            <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Awwards</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#!">Careers
+                                    <span class="badge badge-pill ms-1 bg-primary">Hiring</span>
+                                </a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Customers</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Affiliate</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Contact us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Terms of use</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Privacy policy</a></li>
+                        </ul>
+                    </div>
+                    <!--/.Col-->
+                </div>
+                <hr class="mb-5 mt-0 text-white">
+            </div>
+            <!-- / .container -->
+            <div class="pb-5">
+                <div class="container">
+                    <div class="row justify-content-md-between align-items-center">
+                        <div class="d-flex mb-3 mb-md-0 col-sm-6 col-md-4">
+                            <!-- Social button -->
+                            <a href="#!" class="d-inline-block text-white mb-1 me-2 si rounded-pill si-hover-facebook">
+                                <i class="bx bxl-facebook fs-5"></i>
+                                <i class="bx bxl-facebook fs-5"></i>
+                            </a>
+                            <!-- Social button -->
+                            <a href="#!" class="d-inline-block text-white mb-1 me-2 si rounded-pill si-hover-twitter">
+                                <i class="bx bxl-twitter fs-5"></i>
+                                <i class="bx bxl-twitter fs-5"></i>
+                            </a>
+                            <!-- Social button -->
+                            <a href="#!" class="d-inline-block text-white mb-1 me-2 si rounded-pill si-hover-linkedin">
+                                <i class="bx bxl-linkedin fs-5"></i>
+                                <i class="bx bxl-linkedin fs-5"></i>
+                            </a>
+                            <!-- Social button -->
+                            <a href="#!" class="d-inline-block text-white mb-1 si rounded-pill si-hover-instagram">
+                                <i class="bx bxl-instagram fs-5"></i>
+                                <i class="bx bxl-instagram fs-5"></i>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-4 text-sm-end">
+                            <span class="d-block lh-sm small text-white-50">© Copyright
+                                <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                                <script>
+                                    document.write(new Date().getFullYear())
+
+                                </script>
+                                . Assan
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--end:Footer-->
+        <!-- begin Back to Top button -->
+        <a href="#" class="toTop">
+            <i class="bx bxs-up-arrow"></i>
+        </a>
+
+    </form>
+    <script src="Content/js/theme.bundle.min.js"></script>
+</body>
+</html>
